@@ -31,7 +31,7 @@ const modulosDAW = {
 function SeccionModulos(props) {
   return (
     <section className="p-6 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">{props.titulo}</h2>
+      <h2 className="text-3xl font-bold mb-6 text-gray-800">{props.titulo}</h2>
       <ul className="space-y-4">
         {props.lista.map((modulo, index) => {
           // Convertimos el nombre del módulo a un nombre de archivo válido:
@@ -59,8 +59,8 @@ function SeccionModulos(props) {
 function App() {
   return (
     <div style={{ fontFamily: "Arial", padding: "20px" }}>
-      <h1>Campus Gabito</h1>
-      <p>Selecciona el módulo que quieres estudiar o descargar</p>
+      <h1 className="font-bold text-center text-4xl m-4">Campus Gabito</h1>
+      <p className="text-center mt-8 m-4">Selecciona el módulo que quieres estudiar o descargar</p>
 
       {/* 1º Año */}
       <SeccionModulos titulo="1º Año DAW" lista={modulosDAW["1º Año DAW"]} />
