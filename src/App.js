@@ -44,14 +44,29 @@ function SeccionModulos({ titulo, lista, filtro }) {
       <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">{titulo}</h2>
       <ul className="space-y-4">
         {listaFiltrada.map((modulo, index) => {
-          const archivoZip = modulo
+          const idModulo = modulo
             .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
             .replace(/[\s-]+/g, "-")
-            .replace(/[^a-zA-Z0-9\-]/g, "") + ".zip";
+            .replace(/[^a-zA-Z0-9\-]/g, "")
+            .toLowerCase();
+            
+            const archivoZip = idModulo + ".zip";
 
           return (
-            <li key={index} className="flex justify-between items-center bg-white rounded-lg shadow p-4 hover:shadow-lg transition-shadow">
-              {modulo}
+            // Enlace al módulo
+            <li 
+              key={index}
+              id={idModulo}
+              className="flex justify-between items-center bg-white rounded-lg shadow p-4 hover:shadow-lg transition-shadow"
+            >
+              <a
+                href="{`#${idModulo}`}"
+                className="text-blue-600 hover:no-underline"
+              >
+                {modulo}
+              </a>
+
+              {/* Boton para descargar */}
               <a href={`/${archivoZip}`} download>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
                   Descargar
