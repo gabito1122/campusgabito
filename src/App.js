@@ -69,7 +69,7 @@ function App() {
   const [filtro, setFiltro] = useState("");
 
   return (
-    <div className="p-6 font-sans">
+    <div className="p-6 font-sans bg-blue-50">
       <h1 className="text-4xl font-bold text-center mb-4">Campus Gabito</h1>
       <p className="text-center mb-6">Busca un módulo o descárgalo</p>
 
