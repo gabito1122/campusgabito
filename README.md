@@ -8,7 +8,11 @@ El nombre de la página será **CampusGabito**. Está inspirado en la estructura
 Si alguna persona tiene alguna idea que quiera añadir, me la puede comentar por correo electrónico. Por ahora quiero trabajar solo, pero no niego que en un futuro acepte colaborar con quien tenga el mismo propósito que yo: ayudar a la gente.
 
 ---
+## Explicación 
 
+Al ser mi primer proyecto enserio e tenido bastantes problemas con las intalaciones, configuraciones y falta de commits pero a medida que vaya pasando el tiempo ire documentando todo de una mejor manera.
+
+---
 ## Organización del curso
 
 Campus-Dev-Completo/
