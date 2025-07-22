@@ -1,4 +1,5 @@
-// Datos de todos los módulos
+import React, { useState } from "react";
+
 const modulosDAW = {
   "1º Año DAW": [
     "01 - Sistemas Informáticos",
@@ -28,24 +29,33 @@ const modulosDAW = {
   ]
 };
 
-function SeccionModulos(props) {
+function SeccionModulos({ titulo, lista, filtro }) {
+  // Filtramos los módulos según lo que escribe el usuario
+  const listaFiltrada = lista.filter(modulo =>
+    modulo.toLowerCase().includes(filtro.toLowerCase())
+  );
+
+  if (listaFiltrada.length === 0) {
+    return null;
+  }
+
   return (
     <section className="p-6 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-gray-800">{props.titulo}</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">{titulo}</h2>
       <ul className="space-y-4">
-        {props.lista.map((modulo, index) => {
-          // Convertimos el nombre del módulo a un nombre de archivo válido:
+        {listaFiltrada.map((modulo, index) => {
           const archivoZip = modulo
-            .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Quitar tildes
-            .replace(/[\s-]+/g, "-") // Espacios a guiones
-            .replace(/[^a-zA-Z0-9\-]/g, "") // Solo letras, números y guiones
-            + ".zip";
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            .replace(/[\s-]+/g, "-")
+            .replace(/[^a-zA-Z0-9\-]/g, "") + ".zip";
 
           return (
             <li key={index} className="flex justify-between items-center bg-white rounded-lg shadow p-4 hover:shadow-lg transition-shadow">
-              {modulo}{" "}
+              {modulo}
               <a href={`/${archivoZip}`} download>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Descargar</button>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                  Descargar
+                </button>
               </a>
             </li>
           );
@@ -55,21 +65,29 @@ function SeccionModulos(props) {
   );
 }
 
-
 function App() {
+  const [filtro, setFiltro] = useState("");
+
   return (
-    <div style={{ fontFamily: "Arial", padding: "20px" }}>
-      <h1 className="font-bold text-center text-4xl m-4">Campus Gabito</h1>
-      <p className="text-center mt-8 m-4">Selecciona el módulo que quieres estudiar o descargar</p>
+    <div className="p-6 font-sans">
+      <h1 className="text-4xl font-bold text-center mb-4">Campus Gabito</h1>
+      <p className="text-center mb-6">Busca un módulo o descárgalo</p>
 
-      {/* 1º Año */}
-      <SeccionModulos titulo="1º Año DAW" lista={modulosDAW["1º Año DAW"]} />
+      {/* Input para buscar */}
+      <div className="flex justify-center mb-10">
+        <input
+          type="text"
+          placeholder="Buscar módulo..."
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+          className="border border-gray-400 rounded px-4 py-2 w-80"
+        />
+      </div>
 
-      {/* 2º Año */}
-      <SeccionModulos titulo="2º Año DAW" lista={modulosDAW["2º Año DAW"]} />
-
-      {/* Extras */}
-      <SeccionModulos titulo="Módulos Extra" lista={modulosDAW["Módulos Extra"]} />
+      {/* Listas filtradas */}
+      <SeccionModulos titulo="1º Año DAW" lista={modulosDAW["1º Año DAW"]} filtro={filtro} />
+      <SeccionModulos titulo="2º Año DAW" lista={modulosDAW["2º Año DAW"]} filtro={filtro} />
+      <SeccionModulos titulo="Módulos Extra" lista={modulosDAW["Módulos Extra"]} filtro={filtro} />
     </div>
   );
 }
