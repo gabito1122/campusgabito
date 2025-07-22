@@ -58,4 +58,4 @@ Campus-Dev-Completo/
 ├── Guias_de_Estudio/
 │ ├── Guia_Completa.pdf (orden detallado y calendario)
 │ └── Guia_Express.pdf (versión rápida para avanzar)
-└── Entornos_Listos/ (scripts para instalar todo en Windows/Linux)
+└── Entornos_Listos/ (scripts para instalar todo en Windows/Linux
