@@ -5,10 +5,13 @@
 
 # Ignorar node_modules en cualquier parte (frontend y backend)
 /node_modules/
+/frontend/node_modules
 
 # Ignorar carpetas y archivos de build y producción
 /build/
+/frontend/build
 /dist/
+/frontend/package-lock.json
 
 # Ignorar archivos de configuración de entorno sensibles
 .env
