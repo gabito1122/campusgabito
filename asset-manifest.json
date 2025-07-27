@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/campusgabito/static/css/main.b76a9e94.css",
-    "main.js": "/campusgabito/static/js/main.782e9e93.js",
+    "main.css": "/campusgabito/static/css/main.e6350957.css",
+    "main.js": "/campusgabito/static/js/main.09b20fb3.js",
     "static/js/453.ea76ca3c.chunk.js": "/campusgabito/static/js/453.ea76ca3c.chunk.js",
     "index.html": "/campusgabito/index.html",
-    "main.b76a9e94.css.map": "/campusgabito/static/css/main.b76a9e94.css.map",
-    "main.782e9e93.js.map": "/campusgabito/static/js/main.782e9e93.js.map",
+    "main.e6350957.css.map": "/campusgabito/static/css/main.e6350957.css.map",
+    "main.09b20fb3.js.map": "/campusgabito/static/js/main.09b20fb3.js.map",
     "453.ea76ca3c.chunk.js.map": "/campusgabito/static/js/453.ea76ca3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b76a9e94.css",
-    "static/js/main.782e9e93.js"
+    "static/css/main.e6350957.css",
+    "static/js/main.09b20fb3.js"
   ]
 }
